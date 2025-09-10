@@ -1,7 +1,0 @@
-[
-  {"id": 1, "name": "Servidor de base de datos", "type": "Base de Datos", "description": "Servidor que aloja DB de clientes y transacciones."},
-  {"id": 2, "name": "Aplicación Web de Banca", "type": "Aplicación", "description": "Portal web para clientes (login, transferencias)."},
-  {"id": 3, "name": "Firewall Perimetral", "type": "Seguridad", "description": "Firewall perimetral que filtra tráfico externo."},
-  {"id": 4, "name": "Backup en NAS", "type": "Almacenamiento", "description": "NAS utilizado para respaldos diarios y semanales."},
-  {"id": 5, "name": "Base de Datos Clientes", "type": "Información", "description": "Tabla con datos sensibles de los clientes."}
-]
