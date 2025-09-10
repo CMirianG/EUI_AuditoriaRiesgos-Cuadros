@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>Activo - Auditoría</title>
+  <style>
+    body{font-family:Arial;padding:20px;background:#f7f7f7}
+    .card{background:white;padding:16px;border-radius:8px;box-shadow:0 2px 6px rgba(0,0,0,.06)}
+    .back{margin-bottom:12px}
+    pre{background:#f4f4f4;padding:12px;border-radius:6px;white-space:pre-wrap}
+    button{padding:8px 12px;border-radius:6px;border:none;background:#0b6cff;color:#fff}
+  </style>
+</head>
+<body>
+  <div class="back"><a href="{{ url_for('dashboard') }}">← Volver al dashboard</a></div>
+  <div class="card">
+    <h2>Activo: {{ asset.name }}</h2>
+    <p><strong>Tipo:</strong> {{ asset.type }}</p>
+    <p><strong>Descripción:</strong> {{ asset.description }}</p>
+
+    <form method="post">
+      <button type="submit">Analizar con IA (local)</button>
+    </form>
+
+    {% if analysis %}
+      <h3>Resultado del Análisis</h3>
+      <p><strong>Riesgo estimado:</strong> {{ analysis.riesgo }}</p>
+      <p><strong>Condición:</strong> {{ analysis.condicion }}</p>
+      <p><strong>Impacto:</strong> {{ analysis.impacto }}</p>
+      <p><strong>Recomendación:</strong></p>
+      <pre>{{ analysis.recomendacion }}</pre>
+      <p><strong>Controles ISO sugeridos:</strong> {{ analysis.controles_iso | join(', ') }}</p>
+      <p><strong>Evidencia:</strong><br><small>{{ analysis.evidencia }}</small></p>
+    {% endif %}
+  </div>
+</body>
+</html>
